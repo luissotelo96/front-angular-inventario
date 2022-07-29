@@ -1,18 +1,42 @@
-<h2>{{tittle}}</h2>
-
-<table class="table">
-    <thead>
-        <tr>
-            <th scope="col">#</th>
-            <th scope="col">Descripcion</th>
-            <th scope="col">Valor</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr *ngFor="let item of productos">
-            <th scope="row">{{item.id}}</th>
-            <td>{{item.descripcion}}</td>
-            <td>{{item.valor}}</td>
-        </tr>
-    </tbody>
-</table>
+<div class="product-list">
+    <div class="card border-top-0  border-start-0 border-end-0">
+        <div class="card-body">
+            <h2>{{tittle}}</h2>
+        </div>
+    </div>
+    <form class="d-flex col-6 col-sm-3 my-4" role="search">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+    </form>
+</div>
+<div class="mt-4">
+    <table class="table table-striped">
+        <thead>
+            <tr class="table-primary">
+                <th scope="col">#</th>
+                <th scope="col">Descripcion</th>
+                <th scope="col">Valor</th>
+                <th scope="col">Opciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of productos">
+                <th scope="row">{{item.id}}</th>
+                <td>{{item.descripcion}}</td>
+                <td>{{item.valor}}</td>
+                <td>?</td>
+            </tr>
+        </tbody>
+    </table>
+    <div>
+        <nav aria-label="Page navigation example">
+            <ul class="pagination justify-content-center">
+                <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+                <li class="page-item"><a class="page-link" href="#">1</a></li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item"><a class="page-link" href="#">Next</a></li>
+            </ul>
+        </nav>
+    </div>
+</div>
