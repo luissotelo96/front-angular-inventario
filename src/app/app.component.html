@@ -77,77 +77,69 @@
   </symbol>
 </svg>
 
-<div class="row">
-  <div class="col-3">
-    <div class="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark" style="width: 250px; height: 100vh;">
-      <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
-        <svg class="bi me-2" width="40" height="32">
-          <use xlink:href="#bootstrap" />
-        </svg>
-        <span class="fs-4">Sidebar</span>
+<mat-sidenav-container class="app-container">
+  <mat-sidenav mode="side" opened>
+    <div class="d-flex flex-column flex-shrink-0 p-3 link-dark bg-light" style="width: 200px; height: 100vh;">
+      <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">        
+        <span class="fs-4">Administración de Inventario</span>
       </a>
       <hr>
       <ul class="nav nav-pills flex-column mb-auto">
         <li class="nav-item">
-          <a href="#" class="nav-link text-white" aria-current="page">
-            <svg class="bi me-2" width="25" height="25">
-              <use xlink:href="#home" />
-            </svg>
+          <a href="#" class="nav-link link-dark" aria-current="page">  
+            <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#home"/></svg>          
             Home
           </a>
         </li>
         <li class="mb-1">
-          <button class="btn btn-toggle align-items-center text-white rounded collapsed" data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="true">
-            <svg class="bi me-2" width="16" height="16">
-              <use xlink:href="#grid" />
-            </svg>
+          <a class="nav-link link-dark rounded collapsed" data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="true">            
+            <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#grid"/></svg>
             Productos
-          </button>
-          <div class="collapse show" id="home-collapse">
+          </a>
+          <div class="collapse" id="home-collapse">
             <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-              <li><a routerLink="/product-list-component" class="link-dark rounded text-white">Ver Productos</a></li>
-              <li><a routerLink="/product-charts-component" class="link-dark rounded text-white">Ver Gráficas</a></li>
+              <li><a routerLink="/product-list-component" class="link-dark rounded link-dark">Ver Productos</a></li>
+              <li><a routerLink="/product-charts-component" class="link-dark rounded link-dark">Ver Gráficas</a></li>
             </ul>
           </div>
         </li>
         <li>
-          <a href="#" class="nav-link text-white">
-            <svg class="bi me-2" width="16" height="16">
-              <use xlink:href="#table" />
-            </svg>
+          <a href="#" class="nav-link link-dark"> 
+            <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#table"/></svg>          
             Orders
           </a>
         </li>        
         <li>
-          <a href="#" class="nav-link text-white">
-            <svg class="bi me-2" width="16" height="16">
-              <use xlink:href="#people-circle" />
-            </svg>
+          <a href="#" class="nav-link link-dark">    
+            <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#people-circle"/></svg>        
             Customers
           </a>
         </li>
-      </ul>
-      <hr>
-      <div class="dropdown">
-        <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser2"
-          data-bs-toggle="dropdown" aria-expanded="false">
-          <img src="https://github.com/mdo.png" alt="" width="32" height="32" class="rounded-circle me-2">
-          <strong>mdo</strong>
-        </a>
-        <ul class="dropdown-menu text-small shadow" aria-labelledby="dropdownUser2">
-          <li><a class="dropdown-item" href="#">New project...</a></li>
-          <li><a class="dropdown-item" href="#">Settings</a></li>
-          <li><a class="dropdown-item" href="#">Profile</a></li>
-          <li>
-            <hr class="dropdown-divider">
-          </li>
-          <li><a class="dropdown-item" href="#">Sign out</a></li>
-        </ul>
-      </div>
+      </ul>    
     </div>
-  </div>
-
-  <div class="col-8">
-    <router-outlet></router-outlet>
-  </div>
-</div>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <div class="container">
+      <nav class="navbar">
+        <a class="navbar-brand" href="#"></a>
+          <div class="dropdown ">
+            <a href="#" class="d-flex align-items-center link-dark text-decoration-none dropdown-toggle" id="dropdownUser2"
+              data-bs-toggle="dropdown" aria-expanded="false">
+              <img src="https://github.com/mdo.png" alt="" width="42" height="42" class="rounded-circle me-2">
+              Luis Sotelo
+            </a>
+            <ul class="dropdown-menu text-small shadow" aria-labelledby="dropdownUser2">
+              <li><a class="dropdown-item" href="#">New project...</a></li>
+              <li><a class="dropdown-item" href="#">Settings</a></li>
+              <li><a class="dropdown-item" href="#">Profile</a></li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+              <li><a class="dropdown-item" href="#">Sign out</a></li>
+            </ul>     
+        </div>
+      </nav>   
+      <router-outlet></router-outlet>
+    </div>    
+  </mat-sidenav-content>
+</mat-sidenav-container>

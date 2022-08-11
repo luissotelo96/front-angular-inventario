@@ -21,14 +21,12 @@ export class ProductListComponent implements OnInit {
   ];
 
   tittle: string = "Lista Productos";
+  displayedColumns: string[] = ['id', 'descripcion', 'valor', 'opciones'];
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  sumar(n1: number, n2: number) {
-    return n1 + n2;
-  }
 
 }
